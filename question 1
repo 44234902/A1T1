@@ -1,0 +1,27 @@
+#download twain.txt and rename it as twain.txt
+culr -s http://www.gutenberg.org/files/76/76-0.txt > twain.txt
+
+python3
+
+#define a convert function
+import re
+import os
+def alter(f,old,new,nf_name):
+ with open(f,'r') as f1, open('%s.bak'%f,'w') as f2:   #open file and creat a backup file
+  for line in f1:
+   line=line.replace(old,new)
+  f2.write(line)       #replace old string to new string 
+ os.rename('%s.bak'%f,nf_name)  #rename the backup file
+
+#use the alter function created before to convert "Huck" to "HucK" and rename it as twainchange.txt
+alter('twain.txt','Huck','HucK','twainchange.txt')
+
+#check
+with open('twainchange.txt','r') as file1:
+ c=file1.read()
+ 
+ print(re.findall(r"Huck",c))
+ 
+ print(re.fiindall(r"HucK",c))
+ 
+ 
