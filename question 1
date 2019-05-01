@@ -3,7 +3,7 @@ culr -s http://www.gutenberg.org/files/76/76-0.txt > twain.txt
 
 python3
 
-#define a convert function
+#define a function to alter the string
 import re
 import os
 def alter(f,old,new,nf_name):
