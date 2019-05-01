@@ -1,0 +1,53 @@
+#!/usr/bin/python3
+
+# assume 1: [a,b)
+import numpy
+import sys
+
+a=int(sys.argv[1])
+b=int(sys.argv[2])
+if a < b:
+ print(numpy.random.randint(a,b))
+elif a == b:
+ print("please input two different integers")
+else:
+ print(numpy.random.randint(b,a))
+
+
+
+
+#assume 2: [a,b]
+
+import numpy
+import sys
+
+a=int(sys.argv[1])
+b=int(sys.argv[2])
+if a < b:
+ print(numpy.random.randint(a,int(b+1)))
+elif a == b:
+ print(a)
+else:
+ print(numpy.random.randint(b,int(a+1)))
+ 
+ 
+ 
+ #assume 3:(a,b)
+ 
+ import numpy
+ imiport sys
+ 
+ a=int(sys.argv[1])
+ b=int(sys.argv[2])
+ if a == b:
+  print("please input two different integers.")
+ elif a < b:
+  if int(a+1) == b:
+   print("there is no integers")
+  else:
+   print(numpy.random.randint(int(a+1),b))
+ else:
+  if int(b+1) == a:
+   print("there is no integers")
+  else:
+   print(numpy.random.randint(int(b+1),a))
