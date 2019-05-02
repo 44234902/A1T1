@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+#t is the number of years; p is principle; r is annual interest rate
+#if the annual interest rate is 10%, input 10 in command line
+#at the command line, the enter order is t p r
+import sys
+import math
+
+t = float(sys.argv[1])
+p = float(sys.argv[2])
+r = float(sys.argv[3])
+amount = p*math.exp(t*r/100)
+print(amount)
