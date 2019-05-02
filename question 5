@@ -1,0 +1,27 @@
+#/usr/bin/python3
+#define a function to find all days between the time period.
+
+import datetime
+def everyday(begin,end):
+ datelist = []
+ begin = datetime.datetime.strptime(begin,"%m %d")
+ end = datetime.datetime.strptime(end,"%m %d")
+ while begin <= end:
+  datestr = begin.strftime("%m %d")
+  datelist.append(datestr)
+  begin += datetime.timedelta(days=1)
+ return datelist
+ 
+ a = everyday('3 20','6 20')
+ 
+ #check whether the input date is included in datelist
+ 
+ import sys
+ 
+ b = sys.argv[1]
+ c = sys.argv[2]
+ d = '%s %s'%(b,c)
+ e = datetime.datetime.strptime(d,"%m %d")
+ f = e.strftime("%m %d")
+ print(f in a)
+ 
